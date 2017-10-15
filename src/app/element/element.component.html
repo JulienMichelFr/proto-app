@@ -2,9 +2,50 @@
   <label for="element-name">Name</label>
   <input id="element-name" type="text" [(ngModel)]="element.name" required>
 
-  <div class="element-container">
-    <app-element *ngFor="let element of element.elements; let i = index;" [element]="element" (removeElement)="handleRemove(i)"></app-element>
+  <div style="display: flex; flex-flow: row nowrap;">
+    <div style="flex-basis: 50%">
+      <p>Inputs</p>
+      <button (click)="addInput()">Add</button>
+      <div>
+        <div *ngFor="let input of element.inputs; let i = index;">
+          <div>
+            <button (click)="removeInput(i)">Remove</button>
+            <label for="input-name">Name</label>
+            <input id="input-name" type="text" [(ngModel)]="input.name" required>
+            <label for="input-type">Type</label>
+            <input id="input-type" type="text" [(ngModel)]="input.type" required>
+            <label for="input-required">Required</label>
+            <input id="input-required" type="checkbox" [(ngModel)]="input.required">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="flex-basis: 50%">
+      <p>Outputs</p>
+      <button (click)="addOutput()">Add</button>
+      <div>
+        <div *ngFor="let output of element.outputs; let i = index;">
+          <div>
+            <button (click)="removeOutput(i)">Remove</button>
+            <label for="output-name">Name</label>
+            <input id="output-name" type="text" [(ngModel)]="output.name" required>
+            <label for="output-type">Type</label>
+            <input id="output-type" type="text" [(ngModel)]="output.type" required>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <button (click)="remove()">Remove</button><button (click)="add()">Add</button>
+  <div>
+    <button (click)="remove()">Remove</button>
+    <button (click)="add()">Add</button>
+  </div>
+
+
+  <div class="element-container">
+    <app-element *ngFor="let element of element.elements; let i = index;" [element]="element"
+                 (removeElement)="handleRemove(i)"></app-element>
+  </div>
+
 </div>
