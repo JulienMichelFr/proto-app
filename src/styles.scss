@@ -5,4 +5,20 @@ body {
   @include angular-material-theme($electric-app-theme);
 }
 
+.mat-list-item-content {
+  justify-content: space-between !important;
+  padding: 0 !important;
 
+  & > * {
+    flex-grow: 1;
+    padding: 0 10px;
+  }
+
+  &:first-child {
+    padding: 0 10px 0 0;
+  }
+
+  &:last-child {
+    padding: 0 0 0 10px;
+  }
+}
