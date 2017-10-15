@@ -1,0 +1,10 @@
+<div class="element">
+  <label for="element-name">Name</label>
+  <input id="element-name" type="text" [(ngModel)]="element.name" required>
+
+  <div class="element-container">
+    <app-element *ngFor="let element of element.elements; let i = index;" [element]="element" (removeElement)="handleRemove(i)"></app-element>
+  </div>
+
+  <button (click)="remove()">Remove</button><button (click)="add()">Add</button>
+</div>

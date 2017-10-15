@@ -1,0 +1,15 @@
+.element {
+  padding: 15px;
+  border: 1px solid black;
+
+  label {
+    display: block;
+    font-weight: bold;
+  }
+
+  .element-container {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+  }
+}
