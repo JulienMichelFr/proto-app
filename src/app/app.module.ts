@@ -6,7 +6,7 @@ import {ElementEditorComponent} from './element-editor/element-editor.component'
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MatButtonModule, MatCardModule, MatCheckboxModule, MatIconModule, MatInputModule, MatListModule,
+  MatButtonModule, MatCardModule, MatCheckboxModule, MatIconModule, MatInputModule, MatListModule, MatTabsModule,
   MatTooltipModule
 } from '@angular/material';
 import { ElementDisplayComponent } from './element-display/element-display.component';
@@ -28,7 +28,8 @@ import { ElementDisplayComponent } from './element-display/element-display.compo
     MatInputModule,
     MatCheckboxModule,
     MatTooltipModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

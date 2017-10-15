@@ -1,2 +1,8 @@
-<app-element-editor [(element)]="element"></app-element-editor>
-<app-element-display [element]="element"></app-element-display>
+<mat-tab-group>
+  <mat-tab label="Editor">
+    <app-element-editor [(element)]="element"></app-element-editor>
+  </mat-tab>
+  <mat-tab label="Viewer">
+    <app-element-display [element]="element"></app-element-display>
+  </mat-tab>
+</mat-tab-group>
