@@ -1,0 +1,9 @@
+app-element-display {
+  display: block;
+  margin-left: 10px;
+}
+
+:host {
+  @import url('https://cdn.rawgit.com/tonsky/FiraCode/master/distr/ttf/FiraCode-Regular.ttf');
+  font-family: "Fira Code", monospace;
+}
