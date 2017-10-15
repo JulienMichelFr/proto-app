@@ -1,15 +1,17 @@
-.element {
-  padding: 15px;
-  border: 1px solid black;
+.element-container {
+  margin-top: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px;
+}
 
-  label {
-    display: block;
-    font-weight: bold;
-  }
+mat-card > mat-form-field {
+  display: block;
+  width: 100%;
+}
 
-  .element-container {
-    display: flex;
-    flex-flow: row wrap;
-    padding: 10px;
-  }
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
 }

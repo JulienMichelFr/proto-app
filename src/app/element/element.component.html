@@ -1,51 +1,55 @@
-<div class="element">
-  <label for="element-name">Name</label>
-  <input id="element-name" type="text" [(ngModel)]="element.name" required>
+<mat-card>
+  <mat-form-field>
+    <input matInput placeholder="Name" type="text" [(ngModel)]="element.name" required>
+  </mat-form-field>
 
   <div style="display: flex; flex-flow: row nowrap;">
     <div style="flex-basis: 50%">
-      <p>Inputs</p>
-      <button (click)="addInput()">Add</button>
+      <p><strong>Inputs</strong></p>
+      <button matTooltip="Add input" mat-raised-button (click)="addInput()" color="primary" class="btn-block">Add input <mat-icon>add</mat-icon></button>
       <div>
         <div *ngFor="let input of element.inputs; let i = index;">
           <div>
-            <button (click)="removeInput(i)">Remove</button>
-            <label for="input-name">Name</label>
-            <input id="input-name" type="text" [(ngModel)]="input.name" required>
-            <label for="input-type">Type</label>
-            <input id="input-type" type="text" [(ngModel)]="input.type" required>
-            <label for="input-required">Required</label>
-            <input id="input-required" type="checkbox" [(ngModel)]="input.required">
+            <button  (click)="removeInput(i)" mat-raised-button color="warn" class="btn-block">Remove input<mat-icon>delete</mat-icon></button>
+            <div>
+              <mat-form-field>
+                <input matInput type="text" [(ngModel)]="input.name" placeholder="name" required>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput type="text" [(ngModel)]="input.type" placeholder="type" required>
+              </mat-form-field>
+              <mat-checkbox [(ngModel)]="input.required">Required</mat-checkbox>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div style="flex-basis: 50%">
-      <p>Outputs</p>
-      <button (click)="addOutput()">Add</button>
+      <p><strong>Outputs</strong></p>
+      <button (click)="addOutput()" mat-raised-button color="primary" class="btn-block">Add Output<mat-icon>add</mat-icon></button>
       <div>
         <div *ngFor="let output of element.outputs; let i = index;">
           <div>
-            <button (click)="removeOutput(i)">Remove</button>
-            <label for="output-name">Name</label>
-            <input id="output-name" type="text" [(ngModel)]="output.name" required>
-            <label for="output-type">Type</label>
-            <input id="output-type" type="text" [(ngModel)]="output.type" required>
+            <button (click)="removeOutput(i)" mat-raised-button color="warn" class="btn-block">Remove Output<mat-icon>delete</mat-icon></button>
+            <div>
+              <mat-form-field>
+                <input matInput id="output-name" type="text" [(ngModel)]="output.name" required placeholder="Name">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput type="text" [(ngModel)]="output.type" required placeholder="Type">
+              </mat-form-field>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div>
-    <button (click)="remove()">Remove</button>
-    <button (click)="add()">Add</button>
-  </div>
+  <button (click)="add()" mat-raised-button color="primary" class="btn-block">Add element <mat-icon>add</mat-icon></button>
+  <button (click)="remove()" mat-raised-button color="warn" class="btn-block">Remove this element <mat-icon>delete</mat-icon></button>
 
 
   <div class="element-container">
     <app-element *ngFor="let element of element.elements; let i = index;" [element]="element"
                  (removeElement)="handleRemove(i)"></app-element>
   </div>
-
-</div>
+</mat-card>
