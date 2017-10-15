@@ -2,11 +2,11 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Element} from '../interfaces/element';
 
 @Component({
-  selector: 'app-element',
-  templateUrl: './element.component.html',
-  styleUrls: ['./element.component.scss']
+  selector: 'app-element-editor',
+  templateUrl: './element-editor.component.html',
+  styleUrls: ['./element-editor.component.scss']
 })
-export class ElementComponent implements OnInit {
+export class ElementEditorComponent implements OnInit {
 
   display = {
     outputs: true,

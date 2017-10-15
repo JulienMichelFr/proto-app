@@ -1,8 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { ElementComponent } from './element/element.component';
+import {AppComponent} from './app.component';
+import {ElementEditorComponent} from './element-editor/element-editor.component';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
@@ -13,7 +13,7 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
-    ElementComponent
+    ElementEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -31,4 +31,5 @@ import {
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

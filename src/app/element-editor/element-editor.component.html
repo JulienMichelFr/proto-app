@@ -53,7 +53,7 @@
 
   <p class="heading" *ngIf="element.elements?.length" (click)="toggleDisplay('childs')"><strong>Childs</strong><mat-icon>{{'keyboard_arrow_' + (display.childs ? 'up' : 'down') }}</mat-icon></p>
   <div class="element-container" *ngIf="display.childs">
-    <app-element *ngFor="let element of element.elements; let i = index;" [element]="element"
-                 (removeElement)="handleRemove(i)"></app-element>
+    <app-element-editor *ngFor="let element of element.elements; let i = index;" [element]="element"
+                 (removeElement)="handleRemove(i)"></app-element-editor>
   </div>
 </mat-card>
