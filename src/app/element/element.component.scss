@@ -2,7 +2,12 @@
   margin-top: 10px;
   display: flex;
   flex-flow: row wrap;
-  padding: 10px;
+
+  app-element {
+    flex-grow: 1;
+    flex-shrink: 0.25;
+    padding: 10px;
+  }
 }
 
 mat-card > mat-form-field {
@@ -23,9 +28,15 @@ mat-card > mat-form-field {
 
   & > div {
     flex-basis: 48%;
-
-    & > p {
-      text-align: center;
-    }
   }
+}
+
+.heading {
+  text-align: center;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
 }

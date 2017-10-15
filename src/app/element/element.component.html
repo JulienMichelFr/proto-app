@@ -5,9 +5,9 @@
 
   <div class="attributes">
     <div>
-      <p><strong>Inputs</strong></p>
+      <p class="heading" (click)="toggleDisplay('inputs')"><strong>Inputs</strong><mat-icon>{{'keyboard_arrow_' + (display.inputs ? 'up' : 'down') }}</mat-icon></p>
 
-      <mat-list>
+      <mat-list *ngIf="display.inputs">
         <mat-list-item *ngFor="let input of element.inputs; let i = index;">
           <mat-form-field>
             <input matInput type="text" [(ngModel)]="input.name" placeholder="name" required>
@@ -26,8 +26,8 @@
       </mat-list>
     </div>
     <div>
-      <p><strong>Outputs</strong></p>
-      <mat-list>
+      <p class="heading" (click)="toggleDisplay('outputs')"><strong>Outputs</strong><mat-icon>{{'keyboard_arrow_' + (display.outputs ? 'up' : 'down') }}</mat-icon></p>
+      <mat-list *ngIf="display.outputs">
         <mat-list-item *ngFor="let output of element.outputs; let i = index;">
           <mat-form-field>
             <input matInput id="output-name" type="text" [(ngModel)]="output.name" required placeholder="Name">
@@ -45,11 +45,14 @@
       </mat-list>
     </div>
   </div>
+  <br>
   <button (click)="add()" mat-raised-button color="primary" class="btn-block">Add element <mat-icon>add</mat-icon></button>
+  <br>
   <button (click)="remove()" mat-raised-button color="warn" class="btn-block">Remove this element <mat-icon>delete</mat-icon></button>
 
 
-  <div class="element-container">
+  <p class="heading" *ngIf="element.elements?.length" (click)="toggleDisplay('childs')"><strong>Childs</strong><mat-icon>{{'keyboard_arrow_' + (display.childs ? 'up' : 'down') }}</mat-icon></p>
+  <div class="element-container" *ngIf="display.childs">
     <app-element *ngFor="let element of element.elements; let i = index;" [element]="element"
                  (removeElement)="handleRemove(i)"></app-element>
   </div>

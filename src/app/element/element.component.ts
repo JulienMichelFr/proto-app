@@ -8,6 +8,12 @@ import {Element} from '../interfaces/element';
 })
 export class ElementComponent implements OnInit {
 
+  display = {
+    outputs: true,
+    inputs: true,
+    childs: true,
+  };
+
   @Input() element: Element;
   @Output() removeElement = new EventEmitter();
 
@@ -61,4 +67,7 @@ export class ElementComponent implements OnInit {
     this.element.outputs.splice(index, 1);
   }
 
+  toggleDisplay (key: string) {
+    this.display[key] = !this.display[key];
+  }
 }
