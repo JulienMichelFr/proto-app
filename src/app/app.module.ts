@@ -9,11 +9,13 @@ import {
   MatButtonModule, MatCardModule, MatCheckboxModule, MatIconModule, MatInputModule, MatListModule,
   MatTooltipModule
 } from '@angular/material';
+import { ElementDisplayComponent } from './element-display/element-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ElementEditorComponent
+    ElementEditorComponent,
+    ElementDisplayComponent
   ],
   imports: [
     BrowserModule,
